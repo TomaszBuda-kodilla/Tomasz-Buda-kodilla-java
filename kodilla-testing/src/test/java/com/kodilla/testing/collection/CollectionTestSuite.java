@@ -55,6 +55,7 @@ public class CollectionTestSuite {
         for (Integer evens: testTwoList) {
             if (evens % 2 == 0)
             {
+                Assert.assertEquals(evens % 2,0);
                 System.out.println("Test");
             }
         }
