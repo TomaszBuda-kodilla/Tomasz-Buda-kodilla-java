@@ -35,7 +35,9 @@ public class CollectionTestSuite {
             System.out.println("Testing ");
         }
         //Then
-        Assert.assertTrue("test porprawny",true);
+        OddNumbersExterminator test1 = new OddNumbersExterminator();
+        test1.exterminate(testOneList);
+        Assert.assertEquals(testOneList.size(),0);
     }
 
     @Test
@@ -46,8 +48,17 @@ public class CollectionTestSuite {
         for (int i = 0; i < 50; i++) {
             testTwoList.add(theGenerator.nextInt(101));
         }
-        OddNumbersExterminator test = new OddNumbersExterminator();
-        test.exterminate(testTwoList);
+        //When
+        OddNumbersExterminator test2 = new OddNumbersExterminator();
+        test2.exterminate(testTwoList);
+        //Then
+        for (Integer evens: testTwoList) {
+            if (evens % 2 == 0)
+            {
+                System.out.println("Test");
+            }
+        }
+
     }
 }
 
