@@ -52,12 +52,9 @@ public class CollectionTestSuite {
         OddNumbersExterminator test2 = new OddNumbersExterminator();
         test2.exterminate(testTwoList);
         //Then
-        for (Integer evens: testTwoList) {
-            if (evens % 2 == 0)
-            {
+        for (Integer evens: test2.exterminate(testTwoList)) {
                 Assert.assertEquals(evens % 2,0);
                 System.out.println("Test");
-            }
         }
 
     }
