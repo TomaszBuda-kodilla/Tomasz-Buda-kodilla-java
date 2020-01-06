@@ -3,6 +3,7 @@ package com.kodilla.testing.collection;
 import com.kodilla.testing.collection.OddNumbersExterminator;
 import org.junit.*;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class CollectionTestSuite {
@@ -43,18 +44,20 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorNormalList() {
         //Given
-        ArrayList<Integer> testTwoList = new ArrayList<>();
-        Random theGenerator = new Random();
-        for (int i = 0; i < 50; i++) {
-            testTwoList.add(theGenerator.nextInt(101));
-        }
-        //When
         OddNumbersExterminator test2 = new OddNumbersExterminator();
-        test2.exterminate(testTwoList);
+        ArrayList<Integer> testTwoList = new ArrayList<>();
+        testTwoList.add(2);
+        testTwoList.add(4);
+        testTwoList.add(6);
+        //When
+        ArrayList<Integer> testTwoListTrue = new ArrayList<>();
+        testTwoListTrue.add(2);
+        testTwoListTrue.add(4);
+        testTwoListTrue.add(6);
         //Then
-        for (Integer evens: test2.exterminate(testTwoList)) {
-                Assert.assertEquals(0,0);
-                System.out.println("Test");
+        Assert.assertEquals(testTwoListTrue.get(0),test2.exterminate(testTwoListTrue).get(0));
+        Assert.assertEquals(testTwoListTrue.get(1),test2.exterminate(testTwoListTrue).get(1));
+        Assert.assertEquals(testTwoListTrue.get(2),test2.exterminate(testTwoListTrue).get(2));
         }
 
     }

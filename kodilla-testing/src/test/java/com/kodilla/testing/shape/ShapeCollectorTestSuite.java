@@ -2,6 +2,7 @@ package com.kodilla.testing.shape;
 
 import com.kodilla.testing.shape.*;
 import org.junit.*;
+import java.util.*;
 
 public class ShapeCollectorTestSuite {
     private static int testCounter = 0;
@@ -21,15 +22,57 @@ public class ShapeCollectorTestSuite {
         testCounter++;
         System.out.println("Preparing to execute test #" + testCounter);
     }
-  /*  @Test
+    @Test
     public void testAddFigure() {
         //Given
-        ShapeCollector newFigure = new ShapeCollector("Circle");
+        ShapeCollector newFigure = new ShapeCollector();
 
         //When
-        ShapeCollector.addFigure("This is Tringle",15);
+        ShapeCollector.addFigure(new Square(25));
 
         //Then
-        Assert.assertEquals(1, );
-    }*/
+        Assert.assertEquals(1,newFigure.getFigure().size());
+    }
+    @Test
+    public void testRemoveFigure() {
+        //Given
+        ShapeCollector newFigure = new ShapeCollector();
+        ShapeCollector.addFigure(new Square(25));
+
+        //When
+        boolean result = newFigure.removeFigure(new Square(25));
+
+        //Then
+        Assert.assertEquals(0,newFigure.getFigure().size());
+    }
+    @Test
+    public void testGetFigure() {
+        //Given
+        ShapeCollector newFigure = new ShapeCollector();
+        Shape square = new Square();
+        newFigure.addFigure(square);
+
+        //When
+        Shape temporary = newFigure.getFigure(0);
+
+        //Then
+        Assert.assertEquals(square,temporary);
+    }
+    @Test
+    public void testShowFigures() {
+        //Given
+        ShapeCollector newFigure = new ShapeCollector();
+        Shape square = new Square(25);
+        newFigure.addFigure(square);
+
+        ArrayList<Shape> myList = new ArrayList<>();
+        myList.add(square);
+        myList.add(square);
+        myList.add(square);
+        //When
+
+        ArrayList<Shape> myTemporaryList = newFigure.getFigure();
+        //Then
+        Assert.assertEquals(myList,myTemporaryList);
+    }
 }

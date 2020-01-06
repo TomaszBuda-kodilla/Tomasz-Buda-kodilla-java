@@ -1,5 +1,7 @@
 package com.kodilla.testing.shape;
 
+import java.util.*;
+
 public interface Shape {
     String getShapeName();
     int getField();
@@ -13,7 +15,10 @@ class Circle implements Shape{
     }
     public int getField()
     {
-        return 10;
+        int radius = 5;
+        int result;
+        result = (3 * (radius*radius));
+        return result;
     }
 }
 
@@ -25,7 +30,10 @@ class Triangle implements Shape{
     }
     public int getField()
     {
-        return 15;
+        int a = 2, height = 4;
+        int result;
+        result = (a*height)/2;
+        return result;
     }
 }
 
@@ -37,7 +45,11 @@ class Square implements Shape{
     }
     public int getField()
     {
-        return 5;
+        int a = 5;
+        int result;
+        result = a*a;
+        return result;
     }
 }
+
 
