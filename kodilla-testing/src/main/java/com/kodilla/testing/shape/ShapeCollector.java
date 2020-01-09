@@ -6,20 +6,23 @@ public class ShapeCollector {
 
     private ArrayList<Shape> figure = new ArrayList<>();
 
-    public ArrayList<Shape> getFigure(){
+    public ArrayList<Shape> getFigure() {
         return figure;
     }
 
-    void addFigure(Shape shape){
+    void addFigure(Shape shape) {
         figure.add(shape);
     }
-    void removeFigure(Shape shape){
+
+    void removeFigure(Shape shape) {
         figure.remove(shape);
     }
-    void getFigure(int n){
+
+    void getFigure(int n) {
         figure.get(n);
     }
-    void showFigures(){
+
+    void showFigures() {
         System.out.println(figure.toString());
     }
 }
