@@ -20,4 +20,16 @@ public class Square implements Shape {
         return field;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Square)) return false;
+        Square square = (Square) o;
+        return name.equals(square.getShapeName());
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
 }

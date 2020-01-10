@@ -21,5 +21,18 @@ public class Triangle implements Shape {
         return field;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Triangle)) return false;
+        Triangle triangle = (Triangle) o;
+        return name.equals(triangle.getShapeName());
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
+
 }
 

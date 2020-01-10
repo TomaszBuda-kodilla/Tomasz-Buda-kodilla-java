@@ -22,13 +22,13 @@ public class ShapeCollectorTestSuite {
         testCounter++;
         System.out.println("Preparing to execute test #" + testCounter);
     }
-  /*  @Test
+    @Test
     public void testAddFigure() {
         //Given
         ShapeCollector newFigure = new ShapeCollector();
 
         //When
-        ShapeCollector.addFigure(new Square(25));
+        newFigure.addFigure(new Square(5));
 
         //Then
         Assert.assertEquals(1,newFigure.getFigure().size());
@@ -37,10 +37,10 @@ public class ShapeCollectorTestSuite {
     public void testRemoveFigure() {
         //Given
         ShapeCollector newFigure = new ShapeCollector();
-        ShapeCollector.addFigure(new Square(25));
+        newFigure.addFigure(new Square(5));
 
         //When
-        boolean result = newFigure.removeFigure(new Square(25));
+        newFigure.removeFigure(new Square(5));
 
         //Then
         Assert.assertEquals(0,newFigure.getFigure().size());
@@ -49,7 +49,7 @@ public class ShapeCollectorTestSuite {
     public void testGetFigure() {
         //Given
         ShapeCollector newFigure = new ShapeCollector();
-        Shape square = new Square();
+        Shape square = new Square(5);
         newFigure.addFigure(square);
 
         //When
@@ -67,12 +67,10 @@ public class ShapeCollectorTestSuite {
 
         ArrayList<Shape> myList = new ArrayList<>();
         myList.add(square);
-        myList.add(square);
-        myList.add(square);
         //When
 
         ArrayList<Shape> myTemporaryList = newFigure.getFigure();
         //Then
         Assert.assertEquals(myList,myTemporaryList);
-    }*/
+    }
 }

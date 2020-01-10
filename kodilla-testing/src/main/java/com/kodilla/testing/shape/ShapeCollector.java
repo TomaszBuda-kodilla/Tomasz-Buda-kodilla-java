@@ -18,11 +18,24 @@ public class ShapeCollector {
         figure.remove(shape);
     }
 
-    void getFigure(int n) {
-        figure.get(n);
+    Shape getFigure(int n) {
+        int range = figure.size();
+        if (n >= 0 && n < range) {
+            return figure.get(n);
+        } else {
+            return null;
+        }
     }
+
+
 
     void showFigures() {
         System.out.println(figure.toString());
     }
+
+    @Override
+    public String toString(){
+        return "Figure: " + figure + "\n";
+    }
+
 }
