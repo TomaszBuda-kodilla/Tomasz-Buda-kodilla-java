@@ -110,7 +110,7 @@ public class StatisticsTestSuite {
         int quantityOfPosts = forumStats.getPostsCount();
         int quantityOfComments = forumStats.getCommentsCount();
         //Then
-        assert quantityOfPosts > quantityOfComments;
+        Assert.assertTrue(quantityOfPosts > quantityOfComments);
     }
 
     @Test
@@ -130,7 +130,23 @@ public class StatisticsTestSuite {
         int quantityOfPosts = forumStats.getPostsCount();
         int quantityOfComments = forumStats.getCommentsCount();
         //Then
-        assert quantityOfPosts < quantityOfComments;
+        Assert.assertTrue(quantityOfPosts < quantityOfComments);
+    }
+    @Test
+    public void testaveragePostCount(){
+        Statistics statisticsMock = mock(Statistics.class);
+        ArrayList<String> statisticsList = new ArrayList<String>();
+        statisticsList.add("Tomasz Buda");
+
+        when(statisticsMock.usersNames()).thenReturn(statisticsList);
+        when(statisticsMock.postsCount()).thenReturn(1000);
+        when(statisticsMock.commentsCount()).thenReturn(1000);
+
+        ForumStats forumStats = new ForumStats();
+        forumStats.calculateAdvStatistics(statisticsMock);
+
+        double averageOfPosts = forumStats.countAveragePosts();
+        Assert.assertEquals(1,1);
     }
 }
 

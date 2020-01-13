@@ -35,8 +35,7 @@ public class ForumStats {
 
     public double countAveragePosts() {
         if (postsCount > 0) {
-            double result = postsCount / usersCount;
-            return result;
+            return (double) postsCount / usersCount;
         } else {
             return 0;
         }
@@ -44,8 +43,7 @@ public class ForumStats {
 
     public double countAverageCommentsUsers() {
         if (commentsCount > 0) {
-            double result = commentsCount / usersCount;
-            return result;
+            return (double) commentsCount / usersCount;
         } else {
             return 0;
         }
@@ -53,8 +51,7 @@ public class ForumStats {
 
     public double countAverageCommentsPosts() {
         if (commentsCount > 0) {
-            double result = commentsCount / postsCount;
-            return result;
+            return (double) commentsCount / postsCount;
         } else {
             return 0;
         }
@@ -69,12 +66,13 @@ public class ForumStats {
         avrCommentsOnPostCount = countAverageCommentsPosts();
     }
 
-    public void showStatistics() {
-        System.out.println("Numbers of users" + usersCount);
-        System.out.println("Numbers of posts" + postsCount);
-        System.out.println("Numbers of comments" + commentsCount);
-        System.out.println("Average numbers of posts" + avrPostsCount);
-        System.out.println("Average comments per user" + avrUsersCommentsCount);
-        System.out.println("Average numbers of comments per post" + avrCommentsOnPostCount);
+    public String showStatistics() {
+        System.out.println("Numbers of users " + usersCount);
+        System.out.println("Numbers of posts " + postsCount);
+        System.out.println("Numbers of comments " + commentsCount);
+        System.out.println("Average numbers of posts " + avrPostsCount);
+        System.out.println("Average comments per user " + avrUsersCommentsCount);
+        System.out.println("Average numbers of comments per post " + avrCommentsOnPostCount);
+        return " ";
     }
 }
