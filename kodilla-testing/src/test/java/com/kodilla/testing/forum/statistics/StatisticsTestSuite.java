@@ -133,20 +133,25 @@ public class StatisticsTestSuite {
         Assert.assertTrue(quantityOfPosts < quantityOfComments);
     }
     @Test
-    public void testaveragePostCount(){
+    public void testAveragePostCount(){
         Statistics statisticsMock = mock(Statistics.class);
         ArrayList<String> statisticsList = new ArrayList<String>();
         statisticsList.add("Tomasz Buda");
+        statisticsList.add("Buda Tomasz");
 
         when(statisticsMock.usersNames()).thenReturn(statisticsList);
         when(statisticsMock.postsCount()).thenReturn(1000);
-        when(statisticsMock.commentsCount()).thenReturn(1000);
 
         ForumStats forumStats = new ForumStats();
         forumStats.calculateAdvStatistics(statisticsMock);
 
-        double averageOfPosts = forumStats.countAveragePosts();
-        Assert.assertEquals(1,1);
+        double averageOfPosts = forumStats.getAvrPostsCount();
+        /*int quantityOfUsers = forumStats.getUsersCount();
+        int quantityOfPosts = forumStats.getPostsCount();
+        double myAverage = (double)quantityOfPosts/quantityOfUsers;*/ //Dodane gdyby średnia była ciężka do wpisania z palca
+        System.out.println(averageOfPosts);
+        //System.out.println(myAverage);
+        Assert.assertEquals(500, averageOfPosts, 0.0);
     }
 }
 

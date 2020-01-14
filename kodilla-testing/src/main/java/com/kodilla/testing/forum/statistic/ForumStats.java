@@ -35,7 +35,7 @@ public class ForumStats {
 
     public double countAveragePosts() {
         if (postsCount > 0) {
-            return (double) postsCount / usersCount;
+            return (double) postsCount/ usersCount;
         } else {
             return 0;
         }
