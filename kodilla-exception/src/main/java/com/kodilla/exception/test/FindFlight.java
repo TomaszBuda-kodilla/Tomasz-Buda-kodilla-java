@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FindFlight {
-    public void findFlight(Flight flight) throws RouteNotFoundException {
+    public void findFlight(Flight flight, String message) throws RouteNotFoundException {
 
         HashMap<String, Boolean> availableFlights = new HashMap<>();
 
@@ -13,11 +13,11 @@ public class FindFlight {
         int counter=0;
         for (Map.Entry<String,Boolean> entry : availableFlights.entrySet()) {
             counter += 1;
-            if (flight.getArrivalAirport() == entry.getKey()) {
+            if (flight.getArrivalAirport().equals(entry.getKey())) {
                 System.out.println("Flight nr. 000" + counter + " is available.");
             } else {
-                System.out.print("Flight nr. 000" + counter + " ");
-                throw new RouteNotFoundException();
+                System.out.print("Flight nr. 000" + counter + message);
+                throw new RouteNotFoundException("This airport does not exist.");
             }
         }
     }

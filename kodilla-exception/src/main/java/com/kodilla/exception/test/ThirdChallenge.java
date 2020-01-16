@@ -5,9 +5,9 @@ public class ThirdChallenge {
         Flight flight = new Flight("Krakow","Warsaw");
         FindFlight flightFind = new FindFlight();
         try{
-            flightFind.findFlight(flight);
+            flightFind.findFlight(flight," route Closed. ");
         } catch (RouteNotFoundException e){
-            System.out.println("can not reach this destination.");
+            System.out.println("Can not reach this destination.");
         } finally {
             System.out.println("I will be here for eternity.");
         }
