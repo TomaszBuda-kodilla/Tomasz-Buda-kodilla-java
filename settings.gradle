@@ -4,4 +4,7 @@ include 'kodilla-stream'
 include 'kodilla-stream'
 include 'com.kodilla.exception'
 include 'kodilla-exception'
+include 'rps'
+include 'kodailla-rps'
+include 'kodilla-rps'
 
