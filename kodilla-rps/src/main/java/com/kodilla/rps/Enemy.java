@@ -2,8 +2,8 @@ package com.kodilla.rps;
 
 public class Enemy {
 
-    String enemyNick;
-    int enemyScore;
+    private String enemyNick;
+    private int enemyScore;
 
     public Enemy(String enemyNick, int enemyScore) {
         this.enemyNick = enemyNick;

@@ -5,8 +5,10 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -140,25 +142,18 @@ public class BoardTestSuite {
     public void testAddTaskListAverageWorkingTask(){
         //Given
         Board project = prepareTestData();
+
         //When
         List<TaskList> inProgressTasks = new ArrayList<>();
         inProgressTasks.add(new TaskList("In progress"));
 
-        double elements = project.getTaskLists().stream()
-                .filter(inProgressTasks::contains)
-                .flatMap(d -> d.getTasks().stream())
-                .count();
-        System.out.println(elements);
-
-         List<Task> days = project.getTaskLists().stream()
+        OptionalDouble average = project.getTaskLists().stream()
                  .filter(inProgressTasks::contains)
                  .flatMap(i -> i.getTasks().stream())
-                 .collect(toList());
+                 .mapToDouble(t->Period.between(t.getCreated(),LocalDate.now()).getDays())
+                 .average();
 
-
-        System.out.println(days);
-        //double average = days/elements;
         //Then
-        //Assert.assertEquals(10,average);
+        Assert.assertEquals(10,average.getAsDouble(),0.01);
     }
 }
