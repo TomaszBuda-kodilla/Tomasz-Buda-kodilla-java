@@ -10,12 +10,19 @@ public class Enemy {
         this.enemyScore = enemyScore;
     }
 
-    public String getNick() {
+    public String getEnemyNick() {
         return enemyNick;
     }
 
-    public int getMyScore() {
+    public int getEnemyScore() {
         return enemyScore;
+    }
+
+    public int addEnemyScore(){
+        return enemyScore++;
+    }
+    public int restartEnemyScore(){
+        return enemyScore=0;
     }
 }
 

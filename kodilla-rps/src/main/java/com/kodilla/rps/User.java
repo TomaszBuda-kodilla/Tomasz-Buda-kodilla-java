@@ -1,8 +1,8 @@
 package com.kodilla.rps;
 
 public class User {
-    String nick;
-    int myScore;
+    private String nick;
+    private int myScore;
 
     public User(String nick, int myScore) {
         this.nick = nick;
@@ -15,5 +15,12 @@ public class User {
 
     public int getMyScore() {
         return myScore;
+    }
+
+    public int addMyScore(){
+        return myScore++;
+    }
+    public int restartMyScore(){
+        return myScore=0;
     }
 }
