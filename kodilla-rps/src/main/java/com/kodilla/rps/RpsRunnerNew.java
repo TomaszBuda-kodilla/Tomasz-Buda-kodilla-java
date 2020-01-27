@@ -56,8 +56,6 @@ public class RpsRunnerNew {
                             switch (enemy.getEnemyMove()) {
                                 case "1":
                                     System.out.println("Enemy choice is: Scissors");
-                                    user.addMyScore();
-                                    enemy.addEnemyScore();
                                     break;
                                 case "2":
                                     System.out.println("Enemy choice is: Paper");
@@ -77,8 +75,6 @@ public class RpsRunnerNew {
                             switch (enemy.getEnemyMove()) {
                                 case "2":
                                     System.out.println("Enemy choice is Paper");
-                                    enemy.addEnemyScore();
-                                    user.addMyScore();
                                     break;
                                 case "1":
                                     System.out.println("Enemy choice is Scissors");
@@ -98,8 +94,6 @@ public class RpsRunnerNew {
                             switch (enemy.getEnemyMove()) {
                                 case "3":
                                     System.out.println("Enemy choice is: Rock");
-                                    user.addMyScore();
-                                    enemy.addEnemyScore();
                                     break;
                                 case "2":
                                     System.out.println("Enemy choice is Paper ");
