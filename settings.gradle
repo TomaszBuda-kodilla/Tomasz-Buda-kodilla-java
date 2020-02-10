@@ -7,4 +7,5 @@ include 'kodilla-exception'
 include 'rps'
 include 'kodailla-rps'
 include 'kodilla-rps'
+include 'kodilla-good-patterns'
 
