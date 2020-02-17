@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.soliddry;
 
 public class OrderRepository {
     boolean createOrder(User user, Games game){

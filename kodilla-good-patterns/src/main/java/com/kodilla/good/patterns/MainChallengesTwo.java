@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns;
 
-import com.kodilla.good.patterns.challenges.*;
+import com.kodilla.good.patterns.challenges.soliddry.*;
 
 public class MainChallengesTwo {
     public static void main(String[] args) {
