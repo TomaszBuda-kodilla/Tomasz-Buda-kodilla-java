@@ -4,14 +4,17 @@ public class OrderRequest {
     private User user;
     private Producer producer;
 
-    public OrderRequest(final User user, final Producer producer){
+    public OrderRequest(User user, Producer producer) {
         this.user = user;
         this.producer = producer;
-    }
-    public User getUser(){
+            }
+
+    public User getUser() {
         return user;
     }
-    public Producer getGame(){
+
+    public Producer getGame() {
         return producer;
     }
+
 }
