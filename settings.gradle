@@ -8,4 +8,5 @@ include 'rps'
 include 'kodailla-rps'
 include 'kodilla-rps'
 include 'kodilla-good-patterns'
+include 'kodilla-patterns'
 
