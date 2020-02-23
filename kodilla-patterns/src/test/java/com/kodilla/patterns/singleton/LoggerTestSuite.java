@@ -10,13 +10,13 @@ public class LoggerTestSuite {
         //Given
         //When
         String lastLog = Logger.getInstance().getLastLog();
-        System.out.println("Test positive. ");
+        System.out.println("Last log is: " + lastLog);
         //Then
-        Assert.assertEquals("", lastLog);
+        Assert.assertEquals("My first log.", lastLog);
     }
 
     @Test
     public void testLog() {
-        Logger.getInstance().log("");
+        Logger.getInstance().log("My first log.");
     }
 }
