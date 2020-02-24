@@ -9,16 +9,16 @@ public class Flights {
         this.departures = departures;
     }
 
-    public String getDepartures() {
+    public String getDepartures(String from) {
         return departures;
     }
 
-    public String getArrivals() {
+    public String getArrivals(String to) {
         return arrivals;
     }
 
     @Override
     public String toString(){
-        return ("The departure airport - " + getDepartures() + " |  The arrival airport - "+ getArrivals());
+        return ("The departure airport - " + getDepartures(departures) + " |  The arrival airport - "+ getArrivals(arrivals));
     }
 }

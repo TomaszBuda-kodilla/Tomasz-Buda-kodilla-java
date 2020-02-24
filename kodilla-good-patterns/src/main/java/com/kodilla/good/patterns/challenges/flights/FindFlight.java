@@ -1,31 +1,40 @@
 package com.kodilla.good.patterns.challenges.flights;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class FindFlight {
 
     AllFlights allFlights = new AllFlights();
-    public void allFlightsFrom(){
+
+    public void allFlightsFrom(String from) {
         allFlights.getFlights().stream()
-                .filter(a->a.getDepartures().equals("Krakow"))
+                .filter(a -> "Krakow".equals(a.getDepartures(from)))
                 .forEach(System.out::println);
     }
-    public void allFlightsTo(){
+
+    public void allFlightsTo(String to) {
         allFlights.getFlights().stream()
-                .filter(a->a.getArrivals().equals("Poznan"))
+                .filter(a -> a.getArrivals(to).equals("Poznan"))
                 .forEach(System.out::println);
     }
-    public void allFlightsViaTo(){
 
-        Stream<Flights> streamDepartures = allFlights.getFlights().stream();
-        streamDepartures.filter((a) -> a.getDepartures().equals("Krakow"))
+    public void allFlightsViaTo() {
+        List<Flights> flightsFromCracov = allFlights.getFlights().stream().filter((a) -> a.getDepartures("Krakow").equals("Krakow"))
                 .collect(Collectors.toList());
 
-        Stream<Flights> streamArrival = allFlights.getFlights().stream();
-        streamArrival.filter(a->a.getArrivals().equals("Szczecin"))
-                .map(a->streamDepartures.filter(b->b.getArrivals().equals(a.getDepartures())).findAny())
-                .collect(Collectors.toList());
+        allFlights.getFlights().stream()
+                .filter(a -> a.getArrivals("Szczecin").equals("Szczecin"))
+                .forEach(a -> {
+                    Optional<Flights> flight = flightsFromCracov.stream()
+                            .filter(b -> b.getArrivals("").equals(a.getDepartures("")))
+                            .findAny();
+                    if (flight.isPresent()) {
+                        System.out.println(flight.get());
+                        System.out.println(a);
+                    }
+                });
     }
 }
