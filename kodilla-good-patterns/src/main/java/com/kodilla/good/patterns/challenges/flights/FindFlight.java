@@ -19,13 +19,13 @@ public class FindFlight {
     }
     public void allFlightsViaTo(){
 
-
         Stream<Flights> streamDepartures = allFlights.getFlights().stream();
         streamDepartures.filter((a) -> a.getDepartures().equals("Krakow"))
                 .collect(Collectors.toList());
 
         Stream<Flights> streamArrival = allFlights.getFlights().stream();
         streamArrival.filter(a->a.getArrivals().equals("Szczecin"))
+                .map(a->streamDepartures.filter(b->b.getArrivals().equals(a.getDepartures())).findAny())
                 .collect(Collectors.toList());
     }
 }
