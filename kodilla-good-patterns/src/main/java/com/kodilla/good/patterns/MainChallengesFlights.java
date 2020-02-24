@@ -12,6 +12,6 @@ public class MainChallengesFlights {
         System.out.println("\n>>>>>>>>>>>>>>>>>>>>>>>> ALL FLIGHTS TO <<<<<<<<<<<<<<<<<<<<<<<<<\n");
         findFlight.allFlightsTo("Szczecin");
         System.out.println("\n>>>>>>>>>>>>>>>>>>>>>> ALL FLIGHTS TO VIA <<<<<<<<<<<<<<<<<<<<<<<\n");
-        findFlight.allFlightsViaTo();
+        findFlight.allFlightsViaTo("Krakow","Szczecin");
     }
 }

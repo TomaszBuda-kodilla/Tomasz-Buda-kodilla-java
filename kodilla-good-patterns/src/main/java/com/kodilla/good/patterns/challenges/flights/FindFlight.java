@@ -21,15 +21,15 @@ public class FindFlight {
                 .forEach(System.out::println);
     }
 
-    public void allFlightsViaTo() {
-        List<Flights> flightsFromCracov = allFlights.getFlights().stream().filter((a) -> a.getDepartures("Krakow").equals("Krakow"))
+    public void allFlightsViaTo(String from, String to) {
+        List<Flights> flightsFromCracov = allFlights.getFlights().stream().filter((a) -> a.getDepartures(from).equals("Krakow"))
                 .collect(Collectors.toList());
 
         allFlights.getFlights().stream()
-                .filter(a -> a.getArrivals("Szczecin").equals("Szczecin"))
+                .filter(a -> a.getArrivals(to).equals("Szczecin"))
                 .forEach(a -> {
                     Optional<Flights> flight = flightsFromCracov.stream()
-                            .filter(b -> b.getArrivals("").equals(a.getDepartures("")))
+                            .filter(b -> b.getArrivals(to).equals(a.getDepartures(from)))
                             .findAny();
                     if (flight.isPresent()) {
                         System.out.println(flight.get());
