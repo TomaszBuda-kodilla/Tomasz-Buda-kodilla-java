@@ -9,4 +9,6 @@ include 'kodailla-rps'
 include 'kodilla-rps'
 include 'kodilla-good-patterns'
 include 'kodilla-patterns'
+include 'kodilla-spring-intro'
+include 'kodilla-spring'
 
