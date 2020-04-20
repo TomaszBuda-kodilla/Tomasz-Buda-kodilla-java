@@ -53,7 +53,7 @@ public class TaskDaoTestSuite {
         int id = readTasks.get(0).getId();
         taskDao.deleteById(id);
     }
-    /*@Test
+    @Test
     public void testTaskDaoSaveWithFinancialDetails() {
         //Given
         Task task = new Task(DESCRIPTION, 30);
@@ -68,5 +68,5 @@ public class TaskDaoTestSuite {
 
         //CleanUp
         taskDao.deleteById(id);
-    }*/
+    }
 }

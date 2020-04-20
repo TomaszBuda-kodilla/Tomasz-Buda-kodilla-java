@@ -11,7 +11,9 @@ public class BoardConfig {
     @Autowired
     @Qualifier("toDoList")
     TaskList toDoList;
+    @Qualifier("inProgress")
     TaskList inProgress;
+    @Qualifier("doneList")
     TaskList doneList;
 
     @Bean
@@ -24,12 +26,14 @@ public class BoardConfig {
     {
         return new TaskList();
     }
+
     @Bean(name = "inProgress")
     @Scope("prototype")
     public TaskList getInProgress()
     {
         return new TaskList();
     }
+
     @Bean(name= "doneList")
     @Scope("prototype")
     public TaskList getDoneList()

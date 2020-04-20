@@ -10,8 +10,7 @@ public final class TaskList {
         tasks = new ArrayList<>();
     }
 
-    public List getTasks() {
-        tasks.add("Element");
+    public List<String> getTasks() {
         return tasks;
     }
 }
