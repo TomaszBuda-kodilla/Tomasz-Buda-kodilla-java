@@ -35,16 +35,13 @@ public class InvoiceDaoTestSuite {
         Invoice invoice3 = new Invoice("nr.3-04/2020");
 
         invoice1.getItems().add(item1);
-        invoice1.getItems().add(item3);
-        invoice1.getItems().add(item2);
+        item1.setInvoice(invoice1);
 
-        invoice2.getItems().add(item1);
-        invoice2.getItems().add(item1);
-        invoice2.getItems().add(item1);
+        invoice2.getItems().add(item2);
+        item2.setInvoice(invoice2);
 
-        invoice3.getItems().add(item1);
-        invoice3.getItems().add(item2);
-        invoice1.getItems().add(item3);
+        invoice3.getItems().add(item3);
+        item3.setInvoice(invoice3);
 
         //When
         invoiceDao.save(invoice1);
@@ -55,10 +52,9 @@ public class InvoiceDaoTestSuite {
         int invoice3Id = invoice3.getId();
 
         //Then
-        Assert.assertEquals(0,invoice1Id);
-        Assert.assertEquals(0,invoice2Id);
-        Assert.assertEquals(0,invoice3Id);
-
+        Assert.assertNotNull(invoice1Id);
+        Assert.assertNotNull(invoice2Id);
+        Assert.assertNotNull(invoice3Id);
         //CleanUp
         try{
             invoiceDao.deleteById(invoice1Id);
