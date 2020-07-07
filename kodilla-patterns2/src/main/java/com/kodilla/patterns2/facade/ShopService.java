@@ -3,8 +3,11 @@ package com.kodilla.patterns2.facade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class ShopService {
@@ -15,7 +18,7 @@ public class ShopService {
     private ProductService productService;
 
     public Long openOrder(Long userId) {
-        if (authenticator.isAuthenticated(userId)) {
+        if (authenticator.isAuthenticator(userId)) {
             Long maxOrder = (long) orders.stream()
                     .mapToInt(o -> o.getOrderId().intValue())
                     .max().orElse(0);
@@ -28,7 +31,7 @@ public class ShopService {
 
     public void addItem(long orderId, Long productId, double gty) {
         orders.stream()
-                .filter(o -> 0.getOrderId().equals(orderId))
+                .filter(o -> o.getOrderId().equals(orderId))
                 .forEach(o -> o.getItems().add(new Item(productId, gty)));
     }
 
@@ -63,7 +66,7 @@ public class ShopService {
     public boolean doPayment(Long orderId) {
         Iterator<Order> orderIterator = orders.stream()
                 .filter(o -> o.getOrderId().equals(orderId))
-                .iterator;
+                .iterator();
         while (orderIterator.hasNext()) {
             Order theOrder = orderIterator.next();
             if (theOrder.isPaid()) {
